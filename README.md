@@ -20,6 +20,28 @@ Step 3: Describng the funnctions of the tabs :
         Contact 
         
 Step 4:
+        After login : 
+        Top he will see the upcoming test in a week to participate .
+        left side bar  , he will find more exams to add , home dashboard , ranking , all tests (only selected ) to avoid
+        too much of data a single time, his/her marks analysis and all.
+        Calendar will mark all the test for the user selected exams .
+        A reminder at top will come.
+        During register user will see mobile number option compulsory , will help in sending messages for the nearby test.
+        There will be a section of premium test series other than one test daily . which will contain detailed answer and ana         analysis.
+        
+        
+LATER PLANS : There will be chat option where the user can simply chat and members will be filtered using the exams selected field.
+so that they can discuss the plans 
 
+Study material will include specific :
+PIB ANALYSIS , HINDU and Indian Express Analysis , Top Question papers and much more .
+Gate 
+BANKS 
+CAT /SAT
+UPSC (ALL paper )
+general Awareness
+
+
+        
 
         

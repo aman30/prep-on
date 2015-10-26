@@ -1,15 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-
-<!-- Mirrored from ndesaintheme.com/edumix/version_1.3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Sep 2015 17:23:15 GMT -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EDUMIX</title>
+    <title>Prep On - Account Info</title>
 
     <link rel="stylesheet" href="css/foundation.css" />
-
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <!-- Custom styles for this template -->
 
     <link rel="stylesheet" href="css/dashboard.css">
@@ -27,6 +24,11 @@
 
 
     <script src="js/vendor/modernizr.js"></script>
+    <style type="text/css">
+        p.course span{
+            margin-right: 10px;
+        }
+    </style>
 
 </head>
 
@@ -43,249 +45,7 @@
 
 
             <!-- Right sidemenu -->
-            <div id="skin-select">
-                <!--      Toggle sidemenu icon button -->
-                <a id="toggle">
-                    <span class="fa icon-menu"></span>
-                </a>
-                <!--      End of Toggle sidemenu icon button -->
-
-                <div class="skin-part">
-                    <div id="tree-wrap">
-                        <!-- Profile -->
-                        <div class="profile">
-                            <img alt="" class="" src="img/logo.png">
-                            <h3>EDUMIX <small>1.2</small></h3>
-
-                        </div>
-                        <!-- End of Profile -->
-
-                        <!-- Menu sidebar begin-->
-                        <div class="side-bar">
-                            <ul id="menu-showhide" class="topnav slicknav">
-                                <li>
-                                    <a id="menu-select" class="tooltip-tip" href="index.html" title="Dashboard">
-                                        <i class="icon-monitor"></i>
-                                        <span>Dashboard</span>
-
-                                    </a>
-
-                                </li>
-                                <li>
-                                    <a class="tooltip-tip" href="#">
-                                        <i class=" icon-window"></i>
-                                        <span>Layout<small class="side-menu-noft">New</small></span>
-
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="sidebar-fixed.html">Sidebar Fixed</a>
-                                        </li>  
-                                        <li>
-                                            <a href="all-fixed.html">All Fixed</a>
-                                        </li>
-                        
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Mail">
-                                        <i class=" icon-preview"></i>
-                                        <span>Skin</span>
-
-                                    </a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="blue-skin.html" title="Black Skin">Blue Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="white-skin.html" title="White Skin">White Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="green-skin.html" title="Blue Skin">Green Skin</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Mail">
-                                        <i class=" icon-mail"></i>
-                                        <span>mail</span>
-
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="mail.html" title="Inbox">Inbox
-                                                 <div class="noft-blue bg-red" style="display: inline-block; float: none;">256</div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="compose.html" title="Compose">Compose</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-document-new"></i>
-                                        <span>Page&nbsp;
-                                    <small class="side-menu-noft bg-blue">hot</small></span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="bootstrap/index.html">Bootstrap<div class="noft-blue bg-red" style="display: inline-block; float: none;"><strong>NEW</strong></div></a>
-                                        </li>
-                                         <li>
-                                            <a href="blog-list.html">Blog List</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-detail.html">Blog Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="calendar.html" title="Calender">Calendar</a>
-                                        </li>
-                                        <li>
-                                            <a href="master.html" title="Chart">Blank Page</a>
-                                        </li>
-                                        
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="UI">
-                                        <i class="icon-align-justify"></i>
-                                        <span>UI&nbsp;
-                                    <small class="side-menu-noft">new</small></span>
-                                    </a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="element.html" title="Element">Element</a>
-                                        </li>
-                                        <li><a href="button.html" title="Button">
-                                            Button
-                                        </a>
-                                        </li>
-                                        <li>
-                                            <a href="tab.html" title="Tab & Accordion">Tab & Accordion</a>
-                                        </li>
-                                        <li>
-                                            <a href="typography.html" title="Typography">
-                                                
-                                                Typography
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="panel.html" title="panel">Panel</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="grids.html" title="Grids">Grids</a>
-                                        </li>
-                                        <li>
-                                            <a href="chart.html" title="Chart">Chart</a>
-                                        </li>
-
-
-                                    </ul>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">
-                                        <i class="fontello-doc-1"></i>
-                                        <span>Form&nbsp;  <small class="side-menu-noft">new</small></span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="form-element.html" title="Form Elements">Form Elements</a>
-                                        </li>
-                                        <li>
-                                            <a href="andvance-form.html" title="Andvance Form">Andvance Form</a>
-                                        </li>
-                                        <li>
-                                            <a href="text-editor.html" title="Text Editor">Text Editor</a>
-                                        </li>
-                                        <li>
-                                            <a href="file-upload.html" title="File Upload">File Upload</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class=" icon-view-list-large"></i>
-                                        <span>Tables</span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="table-static.html" title="Table Static">Table Static</a>
-                                        </li>
-                                        <li>
-                                            <a href="table-dynamic.html" title="Table Dynamic">Table Dynamic</a>
-
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="tooltip-tip" href="icon.html" title="Icons">
-                                        <i class="fontello-print"></i>
-                                        <span>Icons</span>
-
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Extra">
-                                        <i class="fontello-beaker"></i>
-                                        <span>Extra</span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="invoice.html" title="Invoice">Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing_table.html" title="Pricing Table">Pricing Table</a>
-                                        </li>
-                                        <li>
-                                            <a href="time-line.html" title="Time Line">Time Line</a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html" title="Chart">Login</a>
-                                        </li>
-                                        <li>
-                                            <a href="map.html" title="Lock Screen">Map</a>
-                                        </li>
-                                        <li>
-                                            <a href="404.html" title="404 Error Page">404 Error Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="500.html" title="500 Error Page">500 Error Page</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end of Menu sidebar  -->
-                        <ul class="bottom-list-menu">
-                            <li>Settings <span class="icon-gear"></span>
-                            </li>
-                            <li>Help <span class="icon-phone"></span>
-                            </li>
-                            <li>About Edumix <span class="icon-music"></span>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php include "includes/navmenu.html" ?>
             <!-- end of Rightsidemenu -->
 
 
@@ -473,7 +233,7 @@
                                     </ul>
                                 </li>
                                 <li class="bg-white">
-                                    <a class="right-off-canvas-toggle bg-white text-gray" href="#"><span style="font-size:13px" class="icon-view-list" ></span></a>
+                                    <!-- <a class="right-off-canvas-toggle bg-white text-gray" href="#"><span style="font-size:13px" class="icon-view-list" ></span></a> -->
                                 </li>
                             </ul>
                         </section>
@@ -755,57 +515,20 @@
                     <div class="large-4 columns">
                         <div class="box">
                             <div class="box-header bg-transparent">
-                                <!-- tools box -->
-                                <div class="pull-right box-tools">
-
-                                    <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
-                                    </span>
-                                    <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
-                                    </span>
-                                </div>
+                                <!-- tools box -->                                
                                 <h3 class="box-title"><i class=" icon-calendar"></i>
-                                    <span>SCHOOL TIMETABLE</span>
+                                    <span>Courses</span>
                                 </h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body" style="display: block;">
                                 <div class="school-timetable">
+                                    <!-- Search for courses -->                                    
+                                    <form>
+                                        <input id="search-course" class="input-top" type="text" placeholder="Add Course">
+                                    </form>
                                     <hr>
-                                    <h5><strong>English </strong>with<i> William Shakespear</i></h5>
-                                    <h6><i class=" fontello-home-outline"></i> Room <span class="bg-green">104 B</span></h6>
-                                    <h6><i class=" fontello-clock"></i> Mon, October 21st<span class="bg-black">10.00 AM - 12.00 AM</span></h6>
-
-                                    <ul>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/men/10.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/women/11.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/women/12.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/men/13.jpg">
-                                        </li>
-                                        <li><span class="fontello-cw"></span>
-                                        </li>
-                                    </ul>
-                                    <hr>
-                                    <h5><strong>Mathematic </strong>with<i> Albert Enstein</i></h5>
-                                    <h6><i class=" fontello-home-outline"></i> Room <span class="bg-green">98 C</span></h6>
-                                    <h6><i class=" fontello-clock"></i> Fri, November 1st<span class="bg-black">09.00 AM - 10.00 AM</span></h6>
-
-                                    <ul>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/women/14.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/women/15.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/women/16.jpg">
-                                        </li>
-                                        <li><img alt="" class="chat-pic" src="../../../api.randomuser.me/portraits/thumb/men/17.jpg">
-                                        </li>
-                                        <li><i style="margin-top:-40px" class=" fontello-flickr"></i>
-                                        </li>
-                                    </ul>
-                                    <hr>
-
+                                    <p class="course"></p>                                    
                                 </div>
 
 
@@ -836,10 +559,9 @@
 
 
 
-
+            <!-- Removing this feature currently -->
             <!-- Right Menu -->
             <aside class="right-off-canvas-menu">
-                <!-- whatever you want goes here -->
                 <ul class="off-canvas-list">
                     <li>
                         <label class="bg-transparent" style="padding:25px 20px"><span class="label round bg-green">online</span><i class=" icon-gear right"></i>
@@ -898,7 +620,7 @@
         </div>
         <!-- end paper bg -->
 
-    </div>
+    </div> 
     <!-- end of off-canvas-wrap -->
 
     <!-- end of inner-wrap -->
@@ -907,6 +629,7 @@
 
     <!-- main javascript library -->
     <script type='text/javascript' src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/waypoints.min.js"></script>
     <script type='text/javascript' src='js/preloader-script.js'></script>
     <!-- foundation javascript -->
@@ -937,6 +660,18 @@
 
     <script type="text/javascript">
     $(function() {
+        /*
+         *  AUTOCOMPLETE
+         *  ------------
+         */
+         $( "#search-course" ).autocomplete({
+            source: "api/getCourses.php",
+            select: function(event,ui){
+                event.preventDefault();
+                $("p.course").append("<span>"+ui.item.value+"</span>");                
+            }
+        });
+
         "use strict";
 
 
@@ -1135,7 +870,4 @@
 
 
 </body>
-
-
-<!-- Mirrored from ndesaintheme.com/edumix/version_1.3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Sep 2015 17:23:50 GMT -->
 </html>

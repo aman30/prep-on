@@ -1,14 +1,11 @@
 <?php 
+	$userId = 1;//for testing purpose	
+	require_once('db_functions.php');
+
 	if(isset($_GET['term']) && !empty($_GET['term'])){
-		require_once('db_functions.php');
-		$courseName = trim(strip_tags($_GET['term']));
+		
+		$courseName = trim(strip_tags($_GET['term']));		
 		$db = new DB_Functions();
-
-
-		//time 
-		$offset = strtotime("+0 minutes");
-		$currentdate = date('Y-m-d', $offset);
-		$currenttime = date('H:i:s', $offset);
 		// response Array
     	$response = array();
     	
@@ -24,7 +21,26 @@
 		}else{
 			echo json_encode($response);
 		}
-	}else{
+	}
+	elseif (isset($_GET['course']) && !empty($_GET['course'])) {
+		$courseName = trim(strip_tags($_GET['course']));
+		$db = new DB_Functions();
+		$response = array('status' =>"");
+    	
+    	$course = $db->courseExists($courseName,$userId);	
+    	if($course){
+    		$response['status'] = "error";    		
+    		echo json_encode($response);
+    	}
+    	else{
+    		$db->addCourse($courseName,$userId);
+    		$response['status'] = "success";
+    		$response['courseName'] = $courseName;
+    		echo json_encode($response);
+    	}
+    		
+	}
+	else{
 		echo "Access Denied";
 	}
  ?>

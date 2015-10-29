@@ -2,7 +2,8 @@
 class DB_Connect{
 	public $prefix;
 	function __construct(){
-		require_once("config.php");
+		$upOne = realpath(__DIR__ . '\..');
+		require_once($upOne."\config.php");
 	}
 
 	function __destruct(){

@@ -1,3 +1,11 @@
+<?php 
+if(!isset($_GET['user_id']))
+    header("Location: ?user_id=1");
+session_start();
+require_once __DIR__."\api\db_functions.php";
+$_SESSION['user_id'] = $_GET['user_id']; //user id
+$db = new DB_Functions();
+ ?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -201,7 +209,7 @@
 
                             <ul class="right">
                                 <li class=" has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><img alt="" class="admin-pic img-circle" src="../../../api.randomuser.me/portraits/thumb/men/28.jpg"><span class="admin-pic-text text-gray">Hi, Dave Mattew </span>
+                                    <a class="bg-white" href="#"><img alt="" class="admin-pic img-circle" src="../../../api.randomuser.me/portraits/thumb/men/28.jpg"><span class="admin-pic-text text-gray">Hi, <?php $name = $db->getName($_SESSION['user_id']); echo ucfirst($name[0])." ".ucfirst($name[1]);?> </span>
                                     </a>
 
                                     <ul class="dropdown dropdown-nest profile-dropdown">
@@ -523,12 +531,17 @@
                             <!-- /.box-header -->
                             <div class="box-body" style="display: block;">
                                 <div class="school-timetable">
-                                    <!-- Search for courses -->                                    
+                                    <!-- Search for courses -->
+                                    <div class="error"></div>                                    
                                     <form>
                                         <input id="search-course" class="input-top" type="text" placeholder="Add Course">
                                     </form>
                                     <hr>
-                                    <p class="course"></p>                                    
+                                    <p class="course"><?php $courses_list = $db->getRegisteredCourses($_SESSION['user_id']); 
+                                            foreach ($courses_list as $value) {
+                                                echo "<span>{$value}</span>";
+                                            }
+                                    ?></p>                                    
                                 </div>
 
 
@@ -660,17 +673,35 @@
 
     <script type="text/javascript">
     $(function() {
+
         /*
-         *  AUTOCOMPLETE
-         *  ------------
+         *  AUTOCOMPLETE COURSE
+         *  -------------------
          */
          $( "#search-course" ).autocomplete({
             source: "api/getCourses.php",
             select: function(event,ui){
                 event.preventDefault();
-                $("p.course").append("<span>"+ui.item.value+"</span>");                
+                courseExists(ui.item.value);                
             }
         });
+         function courseExists(courseName){
+            $.ajax({
+                method: "GET",
+                url: "api/getCourses.php",
+                data: { course: courseName},
+                success: function(e){
+                    alert(e);
+                    var i = jQuery.parseJSON(e);
+                    alert(i.courseName);                    
+                    if(i.status == "success"){
+                        $("p.course").append("<span>"+ i.courseName +"</span>");
+                    }
+                    else
+                        $(".error").html("Course already exists");
+                }
+            });
+         }
 
         "use strict";
 

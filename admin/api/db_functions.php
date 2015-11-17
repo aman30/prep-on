@@ -12,6 +12,32 @@
 
 		}
 
+		public function userIdExists($username){
+			return (mysql_result(mysql_query("SELECT COUNT(ac_id) FROM `".PREFIX."account` WHERE email = '$username'"), 0)==1)? true : false;
+		}
+		/**
+	     * Check if username and password exists
+	     * Return userId or false
+	     */
+	    public function checkUser($username,$password) {
+	    	include_once("config.php");	    	
+	    	if(!$this->userIdExists($username))
+	    		return false;
+	    	else{
+	    		$userId= $this->getUserIdFromUsername($username);
+		    	$password = md5($password);
+		    	return (mysql_result(mysql_query("SELECT COUNT(`ac_id`) FROM `".PREFIX."account` WHERE email ='$username' AND ac_password ='$password'"),0, `ac_id`) == 1)? $userId : false;
+		    }
+	    }
+
+	    /**
+	     * Get userid for username
+	     * Return userId
+	     */
+	    public function getUserIdFromUsername($username){
+			return mysql_result(mysql_query("SELECT ac_id FROM `".PREFIX."account` WHERE email = '$username'"), 0, 'ac_id');
+		}
+
 		/**
 	     * Get first name, last name
 	     * Return first and last name
@@ -19,8 +45,7 @@
 	    public function getName($userId) {
 	    	include_once("config.php");
 	    	$name_query = mysql_query("SELECT `ac_first_name`, `ac_last_name` FROM `".PREFIX."account` WHERE ac_id =".$userId);    	
-	    	return mysql_fetch_array($name_query, MYSQL_NUM);
-	    		
+	    	return mysql_fetch_array($name_query, MYSQL_NUM);	    		
 	    }
 
 		/**
@@ -72,6 +97,6 @@
 	}
 
 	//$db = new DB_Functions;
-	//print_r($db->getName(1));
+	//echo ($db->userIdExists('sankalp.chugh@gmail.com'));
 
 ?>

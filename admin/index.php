@@ -228,7 +228,7 @@ $db = new DB_Functions();
                                         </li>
                                         <li>
                                             <i class="icon-upload"></i>
-                                            <a href="login.html">
+                                            <a href="api/logout.php">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
                                         </li>

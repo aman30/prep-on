@@ -95,6 +95,55 @@ LOGIN AJAX -->
         $(this).addClass('active');
         e.preventDefault();
     });
+    var password = document.getElementById("password"),
+     confirm_password = document.getElementById("confirm-password");
+
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+
+    $("#register-form").on("submit",function(e){
+        e.preventDefault();            
+        var data = $( this ).serialize();
+        $.ajax({
+            url: 'admin/api/authenticate.php',
+            data: data,
+            type: "POST",
+            success: function(d){
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $('#login-form-link').addClass('active');
+            }
+        })
+    });
+
+    $("#login-form").on("submit",function(e){
+            e.preventDefault();            
+            var data = $( this ).serialize();
+            $.ajax({
+                url: 'admin/api/authenticate.php',
+                data: data,
+                type: "POST",
+                success: function(d){
+                    var i = jQuery.parseJSON(d);
+                    //alert(i);
+                    if(i.status == "success"){
+                        // similar behavior as an HTTP redirect
+                        window.location.replace("admin/index.php?user_id="+i.user_id);
+                    }
+                    else{                        
+                        $("p.error-message").append("Invalid username or password");
+                    }
+                }
+            })
+        });
 
 /* ==============================================
 ACCORDION -->

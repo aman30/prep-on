@@ -12,6 +12,11 @@
 
 		}
 
+		/*=============Users==============*/
+		/**
+	     * Check if user ID exists
+	     * Return true or false
+	     */
 		public function userIdExists($username){
 			return (mysql_result(mysql_query("SELECT COUNT(ac_id) FROM `".PREFIX."account` WHERE email = '$username'"), 0)==1)? true : false;
 		}
@@ -47,6 +52,19 @@
 	    	$name_query = mysql_query("SELECT `ac_first_name`, `ac_last_name` FROM `".PREFIX."account` WHERE ac_id =".$userId);    	
 	    	return mysql_fetch_array($name_query, MYSQL_NUM);	    		
 	    }
+
+	    /**
+	     * Register user
+	     */
+	    public function setUser($userDetails) {
+	    	include_once("config.php");
+	    	$fields = '`'.implode('`, `', array_keys($userDetails)). '`';
+			$data = '\''.implode('\',\'', $userDetails).'\'';
+	
+	    	mysql_query("INSERT INTO `".PREFIX."account` ($fields) VALUES ($data)");    	    		
+	    }
+
+	    /*============Courses===========*/
 
 		/**
 	     * Getting all courses user is registered to

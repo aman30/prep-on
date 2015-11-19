@@ -35,6 +35,16 @@ $db = new DB_Functions();
     <style type="text/css">
         p.course span{
             margin-right: 10px;
+            padding-right: 0;
+        }
+        i.fa-times{
+            cursor: pointer;
+            background-color: rgb(146,205,24);
+            padding: 2px;
+            padding-bottom: 1px;
+            margin-left: 3px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
         }
     </style>
 
@@ -539,7 +549,7 @@ $db = new DB_Functions();
                                     <hr>
                                     <p class="course"><?php $courses_list = $db->getRegisteredCourses($_SESSION['user_id']); 
                                             foreach ($courses_list as $value) {
-                                                echo "<span>{$value}</span>";
+                                                echo "<span>{$value}<i class='fa fa-times'></i></span>";
                                             }
                                     ?></p>                                    
                                 </div>
@@ -691,17 +701,27 @@ $db = new DB_Functions();
                 url: "api/getCourses.php",
                 data: { course: courseName},
                 success: function(e){
-                    alert(e);
                     var i = jQuery.parseJSON(e);
                     alert(i.courseName);                    
                     if(i.status == "success"){
-                        $("p.course").append("<span>"+ i.courseName +"</span>");
+                        $("p.course").append("<span>"+ i.courseName +"<i class='fa fa-times'></i></span>");
                     }
                     else
                         $(".error").html("Course already exists");
                 }
             });
          }
+
+         $("i.fa-times").click(function(){
+            $(this).parent().remove();
+            var course = $(this).parent().html();
+            course = course.split("\<");
+            $.ajax({
+                method: "GET",
+                url: "api/getCourses.php",
+                data: "remove="+course[0]                
+            });
+         });
 
         "use strict";
 

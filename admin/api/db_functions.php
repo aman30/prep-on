@@ -66,6 +66,14 @@
 
 	    /*============Courses===========*/
 
+	    /**
+	     * Get Course ID
+	     */
+	    public function getCourseId($courseName) {
+	    	include_once("../config.php");
+	    	return mysql_result(mysql_query("SELECT `courses_id` FROM ".PREFIX."courses_all WHERE course_name = '".$courseName."'"),0, 'courses_id');
+	    }
+
 		/**
 	     * Getting all courses user is registered to
 	     * Return list of courses
@@ -112,9 +120,19 @@
 	    	mysql_query("INSERT INTO ".PREFIX."course_selected(`ac_id_fk`, `course_id_fk`) VALUES ({$userId},{$courseId})");
 	    }
 
+	    /**
+	     * Remove course
+	     */
+	    public function removeCourse($courseName,$userId) {
+	    	include_once("../config.php");
+	    	$course_id = $this->getCourseId($courseName);
+	    	mysql_query("DELETE FROM ".PREFIX."course_selected WHERE `ac_id_fk` = $userId AND `course_id_fk` = $course_id") or die(mysql_error());
+	    }
+
 	}
 
-	//$db = new DB_Functions;
-	//echo ($db->userIdExists('sankalp.chugh@gmail.com'));
+	// $db = new DB_Functions;
+	// echo ($db->getCourseId('CIVIL'));
+	// $db->removeCourse('CIVIL',1);
 
 ?>
